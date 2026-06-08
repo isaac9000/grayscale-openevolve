@@ -1,6 +1,6 @@
 # Grayscale Autoresearch
 
-An advisor-worker agent pair that iteratively optimizes a CUDA kernel for RGB-to-grayscale conversion on NVIDIA A100. Each iteration the **advisor** reviews experiment history and proposes a strategic direction; the **worker** implements it, evaluates on an A100 via Modal, and logs the result.
+An advisor-worker agent pair that iteratively optimizes a CUDA kernel for RGB-to-grayscale conversion on NVIDIA H100. Each iteration the **advisor** reviews experiment history and proposes a strategic direction; the **worker** implements it, evaluates on an H100 via Modal, and logs the result.
 
 ## Task
 
@@ -45,7 +45,7 @@ MODAL_TOKEN_SECRET=...
 AUTORESEARCH_MODEL=claude-sonnet-4-6   # optional, this is the default
 ```
 
-Deploy the A100 evaluator (once, before any agent runs):
+Deploy the H100 evaluator (once, before any agent runs):
 
 ```bash
 uv run modal deploy eval_modal_grayscale.py
@@ -86,7 +86,7 @@ python run_eval.py submission.py -o results.json --mode test   # correctness onl
 ## Structure
 
 ```
-eval_modal_grayscale.py   — deployable Modal A100 evaluator
+eval_modal_grayscale.py   — deployable Modal H100 evaluator
 grayscale/
 ├── agent.py              — advisor-worker agentic loop
 ├── advisor_prompt.md     — advisor system prompt: strategy, comparison discipline

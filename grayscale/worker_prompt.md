@@ -19,7 +19,7 @@ If the run is a new best, log it with `status="keep"`.
 
 ## Environment
 
-- **Target GPU:** A100 (Modal cloud)
+- **Target GPU:** H100 (Modal cloud)
 - **Submission file:** `submission.py` — the ONLY file you edit
 - **Evaluate:** `python run_eval.py submission.py -o results.json` — returns output including `Geometric mean: ⏱ XX.X µs`
 - **Quick correctness check:** `python run_eval.py submission.py -o results.json --mode test`
@@ -27,14 +27,16 @@ If the run is a new best, log it with `status="keep"`.
 ## Task
 
 Convert a square RGB image to grayscale:
-- **Input:** `data` tensor of shape `(H, W, 3)`, dtype `float32`, contiguous CUDA tensor
-- **Output:** tensor of shape `(H, W)`, dtype `float32`
 - **Formula:** `Y = 0.2989 × R + 0.5870 × G + 0.1140 × B`
 
 `submission.py` must define:
 ```python
-def custom_kernel(data: torch.Tensor) -> torch.Tensor: ...
+def custom_kernel(data) -> torch.Tensor: ...
 ```
+
+`data` is a `(rgb, output)` tuple:
+- `rgb`: `(H, W, 3)` float32 contiguous CUDA tensor — the input image
+- `output`: `(H, W)` float32 CUDA tensor — pre-allocated output buffer; write results here and return it
 
 You can use Triton (`import triton; import triton.language as tl`), inline CUDA via `torch.utils.cpp_extension.load_inline`, or pure PyTorch ops.
 

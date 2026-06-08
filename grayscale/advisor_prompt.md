@@ -6,9 +6,9 @@ You are the PI for an iterative kernel optimization loop. A worker agent impleme
 
 ## Problem Specification
 
-**Task:** RGB to Grayscale Conversion on NVIDIA A100.
-- Input: `data` tensor of shape `(H, W, 3)`, dtype `float32`, contiguous, CUDA
-- Output: Grayscale tensor of shape `(H, W)`, dtype `float32`
+**Task:** RGB to Grayscale Conversion on NVIDIA H100.
+- Input: `data` is a `(rgb, output)` tuple — `rgb` is `(H, W, 3)` float32 contiguous CUDA tensor; `output` is a pre-allocated `(H, W)` float32 CUDA buffer
+- Output: write results into `output` and return it
 - Formula: `Y = 0.2989 × R + 0.5870 × G + 0.1140 × B`
 
 **Benchmark sizes and bandwidth speed-of-light (SOL) estimates:**
