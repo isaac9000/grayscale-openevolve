@@ -54,6 +54,14 @@ def evaluate_stage1(program_path: str) -> dict:
     return {"score": 1.0}
 
 
+def evaluate(program_path: str) -> dict:
+    """OpenEvolve entry point — gates stage2 behind a correctness check."""
+    stage1 = evaluate_stage1(program_path)
+    if stage1["score"] == 0.0:
+        return stage1
+    return evaluate_stage2(program_path)
+
+
 def evaluate_stage2(program_path: str) -> dict:
     """Full H100 benchmark — score = 1e6 / geomean_us (higher is faster)."""
     md, rc, stderr = _run_eval(program_path, mode="leaderboard")
