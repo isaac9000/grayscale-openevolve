@@ -56,17 +56,18 @@ def evaluate(program_path: str) -> dict:
     m_tests = re.search(r"Passed (\d+)/(\d+) tests", md)
     tests_passed = int(m_tests.group(1)) if m_tests else 0
     tests_total = int(m_tests.group(2)) if m_tests else 1
-    pass_rate = tests_passed / tests_total if tests_total > 0 else 0.0
+
+    if tests_passed < tests_total:
+        return {"score": 0.0, "pass_rate": tests_passed / tests_total, "error": f"correctness failed ({tests_passed}/{tests_total})"}
 
     m_geo = re.search(r"Geometric mean: ⏱ ([\d.]+)", md)
     if not m_geo:
         error = stderr[:500] if stderr else "benchmark not available"
-        return {"score": pass_rate * 10.0, "pass_rate": pass_rate, "error": error}
+        return {"score": 0.0, "pass_rate": 1.0, "error": error}
 
     geomean_us = float(m_geo.group(1))
-    combined_score = pass_rate * (1e6 / geomean_us)
     return {
-        "score": combined_score,
+        "score": 1e6 / geomean_us,
         "geomean_us": geomean_us,
-        "pass_rate": pass_rate,
+        "pass_rate": 1.0,
     }
