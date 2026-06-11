@@ -5,9 +5,9 @@ llm:
   # Anthropic's OpenAI-compatible endpoint.
   # Set OPENAI_API_KEY=$ANTHROPIC_API_KEY before running.
   primary_model: "claude-sonnet-4-6"
-  primary_model_weight: 0.8
+  primary_model_weight: 1.0
   secondary_model: "claude-haiku-4-5-20251001"
-  secondary_model_weight: 0.2
+  secondary_model_weight: 0.0
   api_base: "https://api.anthropic.com/v1"
   temperature: 0.7
   max_tokens: 8000
