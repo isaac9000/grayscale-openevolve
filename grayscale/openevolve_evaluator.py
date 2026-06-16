@@ -51,23 +51,25 @@ def evaluate(program_path: str) -> dict:
     md, rc, stderr = _run_eval(program_path)
     if md is None:
         error = stderr[:500] if stderr else f"run_eval exited {rc}"
-        return {"score": 0.0, "error": error}
+        return {"combined_score": 0.0, "score": 0.0, "error": error}
 
     m_tests = re.search(r"Passed (\d+)/(\d+) tests", md)
     tests_passed = int(m_tests.group(1)) if m_tests else 0
     tests_total = int(m_tests.group(2)) if m_tests else 1
 
     if tests_passed < tests_total:
-        return {"score": 0.0, "pass_rate": tests_passed / tests_total, "error": f"correctness failed ({tests_passed}/{tests_total})"}
+        return {"combined_score": 0.0, "score": 0.0, "pass_rate": tests_passed / tests_total, "error": f"correctness failed ({tests_passed}/{tests_total})"}
 
     m_geo = re.search(r"Geometric mean: ⏱ ([\d.]+)", md)
     if not m_geo:
         error = stderr[:500] if stderr else "benchmark not available"
-        return {"score": 0.0, "pass_rate": 1.0, "error": error}
+        return {"combined_score": 0.0, "score": 0.0, "pass_rate": 1.0, "error": error}
 
     geomean_us = float(m_geo.group(1))
+    score = 1e6 / geomean_us
     return {
-        "score": 1e6 / geomean_us,
+        "combined_score": score,
+        "score": score,
         "geomean_us": geomean_us,
         "pass_rate": 1.0,
     }

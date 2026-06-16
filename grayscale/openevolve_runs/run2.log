@@ -1,0 +1,245 @@
+2026-06-16 20:43:10,589 - INFO - Logging to grayscale/openevolve_runs/run1/logs/openevolve_20260616_204310.log
+2026-06-16 20:43:10,968 - INFO - Set random seed to 42 for reproducibility
+2026-06-16 20:43:15,051 - INFO - Initialized OpenAI LLM with model: claude-opus-4-8
+2026-06-16 20:43:15,052 - INFO - Initialized LLM ensemble with models: claude-opus-4-8 (weight: 1.00)
+2026-06-16 20:43:15,352 - INFO - Initialized prompt sampler
+2026-06-16 20:43:15,593 - INFO - Set custom templates: system=evaluator_system_message, user=None
+2026-06-16 20:43:15,634 - INFO - Initialized program database with 0 programs
+2026-06-16 20:43:15,800 - INFO - Successfully loaded evaluation function from grayscale/openevolve_evaluator.py
+2026-06-16 20:43:15,829 - WARNING - Configuration has 'cascade_evaluation: true' but evaluator 'grayscale/openevolve_evaluator.py' does not define 'evaluate_stage1' function. This will fall back to direct evaluation, making the cascade setting useless. Consider setting 'cascade_evaluation: false' or implementing cascade functions.
+2026-06-16 20:43:15,836 - INFO - Initialized evaluator with grayscale/openevolve_evaluator.py
+2026-06-16 20:43:15,839 - INFO - Initialized OpenEvolve with grayscale/starting_point.py
+2026-06-16 20:43:15,840 - INFO - Adding initial program to database
+2026-06-16 20:43:21,936 - INFO - Evaluated program c8243b94-ecc4-4496-9b99-ffa434d55429 in 6.09s: combined_score=10618.6421, score=10618.6421, geomean_us=94.1740, pass_rate=1.0000
+2026-06-16 20:43:21,937 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 5, 'diversity': 0}
+2026-06-16 20:43:21,939 - INFO - Initialized process parallel controller with 1 workers
+2026-06-16 20:43:21,941 - INFO - Set max None tasks per child
+2026-06-16 20:43:21,944 - INFO - Started process pool with 1 processes
+2026-06-16 20:43:21,945 - INFO - Using island-based evolution with 2 islands
+2026-06-16 20:43:21,947 - INFO - Island Status:
+2026-06-16 20:43:21,948 - INFO -  * Island 0: 1 programs, best=10618.6421, avg=10618.6421, diversity=0.00, gen=0 (best: c8243b94-ecc4-4496-9b99-ffa434d55429)
+2026-06-16 20:43:21,949 - INFO -    Island 1: 0 programs, best=0.0000, avg=0.0000, diversity=0.00, gen=0
+2026-06-16 20:43:21,951 - INFO - Starting process-based evolution from iteration 1 for 25 iterations (total: 26)
+2026-06-16 20:43:21,959 - INFO - Early stopping disabled
+2026-06-16 20:43:22,382 - INFO - Set custom templates: system=evaluator_system_message, user=None
+2026-06-16 20:43:22,423 - INFO - Successfully loaded evaluation function from grayscale/openevolve_evaluator.py
+2026-06-16 20:43:22,428 - WARNING - Configuration has 'cascade_evaluation: true' but evaluator 'grayscale/openevolve_evaluator.py' does not define 'evaluate_stage1' function. This will fall back to direct evaluation, making the cascade setting useless. Consider setting 'cascade_evaluation: false' or implementing cascade functions.
+2026-06-16 20:43:22,430 - INFO - Initialized evaluator with grayscale/openevolve_evaluator.py
+2026-06-16 20:43:22,435 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:44:10,147 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:44:23,600 - INFO - Evaluated program 6132c383-9c5a-4184-8b1b-07e33f178ab1 in 13.42s: combined_score=10328.5512, score=10328.5512, geomean_us=96.8190, pass_rate=1.0000
+2026-06-16 20:44:23,647 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:44:23,647 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 0, 'diversity': 5}
+2026-06-16 20:44:23,658 - INFO - Iteration 1: Program 6132c383-9c5a-4184-8b1b-07e33f178ab1 (parent: c8243b94-ecc4-4496-9b99-ffa434d55429) completed in 61.21s
+2026-06-16 20:44:23,663 - INFO - Metrics: combined_score=10328.5512, score=10328.5512, geomean_us=96.8190, pass_rate=1.0000
+2026-06-16 20:44:43,778 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:44:52,610 - INFO - Evaluated program a81c26d0-dd37-43f3-bcbb-318a45047d8d in 8.82s: combined_score=10579.7715, score=10579.7715, geomean_us=94.5200, pass_rate=1.0000
+2026-06-16 20:44:52,629 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:44:52,630 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 0, 'diversity': 0}
+2026-06-16 20:44:52,738 - INFO - Iteration 2: Program a81c26d0-dd37-43f3-bcbb-318a45047d8d (parent: c8243b94-ecc4-4496-9b99-ffa434d55429) completed in 28.98s
+2026-06-16 20:44:52,739 - INFO - Metrics: combined_score=10579.7715, score=10579.7715, geomean_us=94.5200, pass_rate=1.0000
+2026-06-16 20:45:14,742 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:45:24,211 - INFO - Evaluated program 7d2fd96a-da41-4404-9e46-4f2783ad29d7 in 9.46s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:45:24,225 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:45:24,227 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 9, 'diversity': 1}
+2026-06-16 20:45:24,230 - INFO - Iteration 3: Program 7d2fd96a-da41-4404-9e46-4f2783ad29d7 (parent: 6132c383-9c5a-4184-8b1b-07e33f178ab1) completed in 31.60s
+2026-06-16 20:45:24,233 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:45:24,234 - WARNING - ⚠️  No 'combined_score' metric found in evaluation results. Using average of all numeric metrics (0.0000) for evolution guidance. For better evolution results, please modify your evaluator to return a 'combined_score' metric that properly weights different aspects of program performance.
+2026-06-16 20:45:45,843 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:46:01,359 - INFO - Evaluated program 9b106bf6-9801-422f-896b-83e591ffc9c7 in 15.51s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:46:01,363 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:46:01,373 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 9, 'diversity': 1}
+2026-06-16 20:46:01,374 - INFO - Iteration 4: Program 9b106bf6-9801-422f-896b-83e591ffc9c7 (parent: a81c26d0-dd37-43f3-bcbb-318a45047d8d) completed in 37.14s
+2026-06-16 20:46:01,377 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:46:24,694 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:46:33,001 - INFO - Evaluated program 1c36ff84-8318-406e-bd0b-f6c506c0f2fc in 8.30s: combined_score=6688.9185, score=6688.9185, geomean_us=149.5010, pass_rate=1.0000
+2026-06-16 20:46:33,031 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:46:33,037 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 9, 'diversity': 9}
+2026-06-16 20:46:33,040 - INFO - Iteration 5: Program 1c36ff84-8318-406e-bd0b-f6c506c0f2fc (parent: 7d2fd96a-da41-4404-9e46-4f2783ad29d7) completed in 31.67s
+2026-06-16 20:46:33,043 - INFO - Metrics: combined_score=6688.9185, score=6688.9185, geomean_us=149.5010, pass_rate=1.0000
+2026-06-16 20:46:33,045 - INFO - Checkpoint interval reached at iteration 5
+2026-06-16 20:46:33,048 - INFO - Island Status:
+2026-06-16 20:46:33,050 - INFO -  * Island 0: 4 programs, best=10618.6421, avg=6909.0279, diversity=109.55, gen=3 (best: c8243b94-ecc4-4496-9b99-ffa434d55429)
+2026-06-16 20:46:33,052 - INFO -    Island 1: 2 programs, best=10579.7715, avg=5289.8857, diversity=125.70, gen=2 (best: a81c26d0-dd37-43f3-bcbb-318a45047d8d)
+2026-06-16 20:46:33,263 - INFO - Saved database with 6 programs to grayscale/openevolve_runs/run1/checkpoints/checkpoint_5
+2026-06-16 20:46:33,294 - INFO - Saved best program at checkpoint 5 with metrics: combined_score=10618.6421, score=10618.6421, geomean_us=94.1740, pass_rate=1.0000
+2026-06-16 20:46:33,297 - INFO - Saved checkpoint at iteration 5 to grayscale/openevolve_runs/run1/checkpoints/checkpoint_5
+2026-06-16 20:46:53,579 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:47:02,958 - INFO - Evaluated program a2edd7cf-ddf6-44cb-879d-65865a4a6226 in 9.37s: combined_score=10960.9461, score=10960.9461, geomean_us=91.2330, pass_rate=1.0000
+2026-06-16 20:47:02,968 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:47:02,972 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 6, 'diversity': 0}
+2026-06-16 20:47:02,976 - INFO - New best program a2edd7cf-ddf6-44cb-879d-65865a4a6226 replaces c8243b94-ecc4-4496-9b99-ffa434d55429 (combined_score: 10618.6421 → 10960.9461, +342.3041)
+2026-06-16 20:47:02,979 - INFO - Iteration 6: Program a2edd7cf-ddf6-44cb-879d-65865a4a6226 (parent: 9b106bf6-9801-422f-896b-83e591ffc9c7) completed in 29.94s
+2026-06-16 20:47:02,983 - INFO - Metrics: combined_score=10960.9461, score=10960.9461, geomean_us=91.2330, pass_rate=1.0000
+2026-06-16 20:47:02,985 - INFO - 🌟 New best solution found at iteration 6: a2edd7cf-ddf6-44cb-879d-65865a4a6226
+2026-06-16 20:47:18,689 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:47:52,229 - INFO - Evaluated program 3ecffc5e-ce28-4f71-b2d9-24488b48b809 in 33.54s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:47:52,237 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 7, 'diversity': 8}
+2026-06-16 20:47:52,238 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:47:52,240 - INFO - Iteration 7: Program 3ecffc5e-ce28-4f71-b2d9-24488b48b809 (parent: 6132c383-9c5a-4184-8b1b-07e33f178ab1) completed in 49.27s
+2026-06-16 20:47:52,243 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:48:15,405 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:48:22,135 - INFO - Evaluated program 60e7f3fd-cd06-44ae-a30a-360e3ce04c8a in 6.71s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:48:22,139 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:48:22,146 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 9, 'diversity': 9}
+2026-06-16 20:48:22,147 - INFO - Iteration 8: Program 60e7f3fd-cd06-44ae-a30a-360e3ce04c8a (parent: a2edd7cf-ddf6-44cb-879d-65865a4a6226) completed in 29.90s
+2026-06-16 20:48:22,149 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:48:42,144 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:48:50,312 - INFO - Evaluated program 0e488f99-7c0c-4306-86e1-c62fa5b77c4d in 8.16s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:48:50,328 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 4, 'diversity': 3}
+2026-06-16 20:48:50,328 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:48:50,330 - INFO - Iteration 9: Program 0e488f99-7c0c-4306-86e1-c62fa5b77c4d (parent: 6132c383-9c5a-4184-8b1b-07e33f178ab1) completed in 28.19s
+2026-06-16 20:48:50,334 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:49:11,221 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:49:32,023 - INFO - Evaluated program 1a442e87-513c-4220-ae4d-0b6e87ab04ba in 20.79s: combined_score=9150.8890, score=9150.8890, geomean_us=109.2790, pass_rate=1.0000
+2026-06-16 20:49:32,034 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:49:32,038 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 8, 'diversity': 5}
+2026-06-16 20:49:32,041 - INFO - Iteration 10: Program 1a442e87-513c-4220-ae4d-0b6e87ab04ba (parent: a81c26d0-dd37-43f3-bcbb-318a45047d8d) completed in 41.70s
+2026-06-16 20:49:32,042 - INFO - Metrics: combined_score=9150.8890, score=9150.8890, geomean_us=109.2790, pass_rate=1.0000
+2026-06-16 20:49:32,044 - INFO - Checkpoint interval reached at iteration 10
+2026-06-16 20:49:32,047 - INFO - Island Status:
+2026-06-16 20:49:32,048 - INFO -  * Island 0: 6 programs, best=10618.6421, avg=4606.0186, diversity=120.32, gen=5 (best: c8243b94-ecc4-4496-9b99-ffa434d55429)
+2026-06-16 20:49:32,049 - INFO -    Island 1: 5 programs, best=10960.9461, avg=6138.3213, diversity=266.35, gen=5 (best: a2edd7cf-ddf6-44cb-879d-65865a4a6226)
+2026-06-16 20:49:33,154 - INFO - Saved database with 11 programs to grayscale/openevolve_runs/run1/checkpoints/checkpoint_10
+2026-06-16 20:49:33,230 - INFO - Saved best program at checkpoint 10 with metrics: combined_score=10960.9461, score=10960.9461, geomean_us=91.2330, pass_rate=1.0000
+2026-06-16 20:49:33,232 - INFO - Saved checkpoint at iteration 10 to grayscale/openevolve_runs/run1/checkpoints/checkpoint_10
+2026-06-16 20:49:52,272 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:50:02,852 - INFO - Evaluated program 7bf11c40-d456-4985-8f03-9709ce70f792 in 10.57s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:50:02,859 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:50:02,860 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 5, 'diversity': 2}
+2026-06-16 20:50:02,863 - INFO - Iteration 11: Program 7bf11c40-d456-4985-8f03-9709ce70f792 (parent: 6132c383-9c5a-4184-8b1b-07e33f178ab1) completed in 30.82s
+2026-06-16 20:50:03,063 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:50:23,425 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:50:31,651 - INFO - Evaluated program 4af535e9-3ce4-4476-85e4-5988c592a2c7 in 8.22s: combined_score=10873.7020, score=10873.7020, geomean_us=91.9650, pass_rate=1.0000
+2026-06-16 20:50:31,656 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:50:31,665 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 5, 'diversity': 2}
+2026-06-16 20:50:31,667 - INFO - Iteration 12: Program 4af535e9-3ce4-4476-85e4-5988c592a2c7 (parent: a81c26d0-dd37-43f3-bcbb-318a45047d8d) completed in 28.80s
+2026-06-16 20:50:31,668 - INFO - Metrics: combined_score=10873.7020, score=10873.7020, geomean_us=91.9650, pass_rate=1.0000
+2026-06-16 20:50:51,490 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:51:05,325 - INFO - Evaluated program bfef4e18-f9d2-4017-96c1-52abf0d9c1b6 in 13.77s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:51:05,333 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:51:05,334 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 7, 'diversity': 3}
+2026-06-16 20:51:05,337 - INFO - Iteration 13: Program bfef4e18-f9d2-4017-96c1-52abf0d9c1b6 (parent: 1c36ff84-8318-406e-bd0b-f6c506c0f2fc) completed in 33.67s
+2026-06-16 20:51:05,339 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:51:22,989 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:51:28,246 - INFO - Evaluated program 505b6473-2b0a-4ecc-9004-5073206410df in 5.25s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:51:28,256 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:51:28,261 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 7, 'diversity': 3}
+2026-06-16 20:51:28,266 - INFO - Iteration 14: Program 505b6473-2b0a-4ecc-9004-5073206410df (parent: 4af535e9-3ce4-4476-85e4-5988c592a2c7) completed in 22.92s
+2026-06-16 20:51:28,271 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:51:50,050 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:51:57,643 - INFO - Evaluated program e4356a40-96d9-4df7-878a-f96297287d77 in 7.59s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:51:57,651 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:51:57,652 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 6, 'diversity': 1}
+2026-06-16 20:51:57,654 - INFO - Iteration 15: Program e4356a40-96d9-4df7-878a-f96297287d77 (parent: c8243b94-ecc4-4496-9b99-ffa434d55429) completed in 29.39s
+2026-06-16 20:51:57,657 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:51:57,658 - INFO - Checkpoint interval reached at iteration 15
+2026-06-16 20:51:57,675 - INFO - Island Status:
+2026-06-16 20:51:57,679 - INFO -  * Island 0: 9 programs, best=10618.6421, avg=3070.6791, diversity=96.50, gen=8 (best: c8243b94-ecc4-4496-9b99-ffa434d55429)
+2026-06-16 20:51:57,684 - INFO -    Island 1: 7 programs, best=10960.9461, avg=5937.9012, diversity=104.77, gen=7 (best: a2edd7cf-ddf6-44cb-879d-65865a4a6226)
+2026-06-16 20:51:58,166 - INFO - Saved database with 16 programs to grayscale/openevolve_runs/run1/checkpoints/checkpoint_15
+2026-06-16 20:51:58,195 - INFO - Saved best program at checkpoint 15 with metrics: combined_score=10960.9461, score=10960.9461, geomean_us=91.2330, pass_rate=1.0000
+2026-06-16 20:51:58,197 - INFO - Saved checkpoint at iteration 15 to grayscale/openevolve_runs/run1/checkpoints/checkpoint_15
+2026-06-16 20:52:16,486 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:52:22,317 - INFO - Evaluated program 006f9970-e78c-4702-a929-e9cff8fe584b in 5.83s: combined_score=10420.1400, score=10420.1400, geomean_us=95.9680, pass_rate=1.0000
+2026-06-16 20:52:22,322 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:52:22,323 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 9, 'diversity': 4}
+2026-06-16 20:52:22,326 - INFO - Iteration 16: Program 006f9970-e78c-4702-a929-e9cff8fe584b (parent: 60e7f3fd-cd06-44ae-a30a-360e3ce04c8a) completed in 24.67s
+2026-06-16 20:52:22,329 - INFO - Metrics: combined_score=10420.1400, score=10420.1400, geomean_us=95.9680, pass_rate=1.0000
+2026-06-16 20:52:41,743 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:52:53,250 - INFO - Evaluated program 529b36e6-a53b-4236-b54c-da96be245d6c in 11.50s: combined_score=11784.2539, score=11784.2539, geomean_us=84.8590, pass_rate=1.0000
+2026-06-16 20:52:53,257 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:52:53,263 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 4, 'diversity': 1}
+2026-06-16 20:52:53,267 - INFO - Island 0 MAP-Elites coverage reached 10.0% (10/100 cells)
+2026-06-16 20:52:53,271 - INFO - New best program 529b36e6-a53b-4236-b54c-da96be245d6c replaces a2edd7cf-ddf6-44cb-879d-65865a4a6226 (combined_score: 10960.9461 → 11784.2539, +823.3077)
+2026-06-16 20:52:53,275 - INFO - Iteration 17: Program 529b36e6-a53b-4236-b54c-da96be245d6c (parent: c8243b94-ecc4-4496-9b99-ffa434d55429) completed in 30.93s
+2026-06-16 20:52:53,279 - INFO - Metrics: combined_score=11784.2539, score=11784.2539, geomean_us=84.8590, pass_rate=1.0000
+2026-06-16 20:52:53,285 - INFO - 🌟 New best solution found at iteration 17: 529b36e6-a53b-4236-b54c-da96be245d6c
+2026-06-16 20:53:18,021 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:53:27,496 - INFO - Evaluated program eed6908c-1a3e-4492-80db-650469f6e6f3 in 9.46s: combined_score=11303.6499, score=11303.6499, geomean_us=88.4670, pass_rate=1.0000
+2026-06-16 20:53:27,499 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:53:27,502 - INFO - New MAP-Elites cell occupied in island 1: {'complexity': 8, 'diversity': 2}
+2026-06-16 20:53:27,528 - INFO - Iteration 18: Program eed6908c-1a3e-4492-80db-650469f6e6f3 (parent: 9b106bf6-9801-422f-896b-83e591ffc9c7) completed in 34.24s
+2026-06-16 20:53:27,531 - INFO - Metrics: combined_score=11303.6499, score=11303.6499, geomean_us=88.4670, pass_rate=1.0000
+2026-06-16 20:53:47,686 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:53:54,845 - INFO - Evaluated program f644e737-dd69-4cbf-b8f3-64900eb657da in 7.15s: combined_score=11430.9229, score=11430.9229, geomean_us=87.4820, pass_rate=1.0000
+2026-06-16 20:53:54,850 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:53:54,858 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 2, 'diversity': 3}
+2026-06-16 20:53:54,859 - INFO - Iteration 19: Program f644e737-dd69-4cbf-b8f3-64900eb657da (parent: 3ecffc5e-ce28-4f71-b2d9-24488b48b809) completed in 27.35s
+2026-06-16 20:53:54,861 - INFO - Metrics: combined_score=11430.9229, score=11430.9229, geomean_us=87.4820, pass_rate=1.0000
+2026-06-16 20:54:13,438 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:54:27,262 - INFO - Evaluated program 185174bf-d73f-4143-bcc1-5d4d1c3e1b70 in 13.82s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:54:27,269 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:54:27,271 - INFO - Population size (21) exceeds limit (20), removing 1 programs
+2026-06-16 20:54:27,273 - INFO - Population size after cleanup: 20
+2026-06-16 20:54:27,275 - INFO - Iteration 20: Program 185174bf-d73f-4143-bcc1-5d4d1c3e1b70 (parent: 4af535e9-3ce4-4476-85e4-5988c592a2c7) completed in 32.42s
+2026-06-16 20:54:27,277 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:54:27,278 - INFO - Checkpoint interval reached at iteration 20
+2026-06-16 20:54:27,281 - INFO - Island Status:
+2026-06-16 20:54:27,283 - INFO -  * Island 0: 10 programs, best=11784.2539, avg=5085.1289, diversity=68.17, gen=10 (best: 529b36e6-a53b-4236-b54c-da96be245d6c)
+2026-06-16 20:54:27,284 - INFO -    Island 1: 10 programs, best=11303.6499, avg=6328.9099, diversity=56.08, gen=10 (best: eed6908c-1a3e-4492-80db-650469f6e6f3)
+2026-06-16 20:54:28,472 - INFO - Saved database with 20 programs to grayscale/openevolve_runs/run1/checkpoints/checkpoint_20
+2026-06-16 20:54:28,547 - INFO - Saved best program at checkpoint 20 with metrics: combined_score=11784.2539, score=11784.2539, geomean_us=84.8590, pass_rate=1.0000
+2026-06-16 20:54:28,549 - INFO - Saved checkpoint at iteration 20 to grayscale/openevolve_runs/run1/checkpoints/checkpoint_20
+2026-06-16 20:54:46,346 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:54:54,646 - INFO - Evaluated program af856111-2a82-4cb2-87c8-42d0c2066add in 8.29s: combined_score=11025.7230, score=11025.7230, geomean_us=90.6970, pass_rate=1.0000
+2026-06-16 20:54:54,729 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:54:54,740 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 2, 'diversity': 2}
+2026-06-16 20:54:54,747 - INFO - Population size (21) exceeds limit (20), removing 1 programs
+2026-06-16 20:54:54,748 - INFO - Population size after cleanup: 20
+2026-06-16 20:54:54,749 - INFO - Iteration 21: Program af856111-2a82-4cb2-87c8-42d0c2066add (parent: c8243b94-ecc4-4496-9b99-ffa434d55429) completed in 27.46s
+2026-06-16 20:54:54,753 - INFO - Metrics: combined_score=11025.7230, score=11025.7230, geomean_us=90.6970, pass_rate=1.0000
+2026-06-16 20:55:15,688 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:55:25,181 - INFO - Evaluated program aafc13b3-a352-4621-b896-59c3c7dd008c in 9.31s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:55:25,186 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:55:25,195 - INFO - Population size (21) exceeds limit (20), removing 1 programs
+2026-06-16 20:55:25,198 - INFO - Population size after cleanup: 20
+2026-06-16 20:55:25,200 - INFO - Iteration 22: Program aafc13b3-a352-4621-b896-59c3c7dd008c (parent: a81c26d0-dd37-43f3-bcbb-318a45047d8d) completed in 30.45s
+2026-06-16 20:55:25,216 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:55:43,483 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:56:02,453 - INFO - Evaluated program 0834c452-1211-4672-8999-1eca33cadec1 in 18.96s: combined_score=9194.3032, score=9194.3032, geomean_us=108.7630, pass_rate=1.0000
+2026-06-16 20:56:02,463 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:56:02,469 - INFO - Population size (21) exceeds limit (20), removing 1 programs
+2026-06-16 20:56:02,472 - INFO - Population size after cleanup: 20
+2026-06-16 20:56:02,474 - INFO - Iteration 23: Program 0834c452-1211-4672-8999-1eca33cadec1 (parent: c8243b94-ecc4-4496-9b99-ffa434d55429) completed in 37.27s
+2026-06-16 20:56:02,475 - INFO - Metrics: combined_score=9194.3032, score=9194.3032, geomean_us=108.7630, pass_rate=1.0000
+2026-06-16 20:56:26,937 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:56:36,735 - INFO - Evaluated program b9b755ff-b797-4396-b436-27e3981aa97e in 9.79s: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:56:36,741 - INFO - Sampled model: claude-opus-4-8
+2026-06-16 20:56:36,745 - INFO - Population size (21) exceeds limit (20), removing 1 programs
+2026-06-16 20:56:36,747 - INFO - Population size after cleanup: 20
+2026-06-16 20:56:36,748 - INFO - Iteration 24: Program b9b755ff-b797-4396-b436-27e3981aa97e (parent: a2edd7cf-ddf6-44cb-879d-65865a4a6226) completed in 34.28s
+2026-06-16 20:56:36,750 - INFO - Metrics: score=0.0000, pass_rate=0.0000, error=correctness failed (0/4)
+2026-06-16 20:56:53,721 - INFO - HTTP Request: POST https://api.anthropic.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-16 20:57:06,287 - INFO - Evaluated program dacc3371-1169-47ee-a082-65b1ef5bc466 in 12.56s: combined_score=9195.8251, score=9195.8251, geomean_us=108.7450, pass_rate=1.0000
+2026-06-16 20:57:06,292 - INFO - New MAP-Elites cell occupied in island 0: {'complexity': 3, 'diversity': 2}
+2026-06-16 20:57:06,294 - INFO - Island 0 MAP-Elites coverage reached 10.0% (10/100 cells)
+2026-06-16 20:57:06,295 - INFO - Population size (21) exceeds limit (20), removing 1 programs
+2026-06-16 20:57:06,297 - INFO - Population size after cleanup: 20
+2026-06-16 20:57:06,299 - INFO - Iteration 25: Program dacc3371-1169-47ee-a082-65b1ef5bc466 (parent: af856111-2a82-4cb2-87c8-42d0c2066add) completed in 29.55s
+2026-06-16 20:57:06,323 - INFO - Metrics: combined_score=9195.8251, score=9195.8251, geomean_us=108.7450, pass_rate=1.0000
+2026-06-16 20:57:06,329 - INFO - Checkpoint interval reached at iteration 25
+2026-06-16 20:57:06,333 - INFO - Island Status:
+2026-06-16 20:57:06,337 - INFO -  * Island 0: 10 programs, best=11784.2539, avg=8026.7140, diversity=89.08, gen=13 (best: 529b36e6-a53b-4236-b54c-da96be245d6c)
+2026-06-16 20:57:06,340 - INFO -    Island 1: 10 programs, best=11303.6499, avg=6328.9099, diversity=56.08, gen=12 (best: eed6908c-1a3e-4492-80db-650469f6e6f3)
+2026-06-16 20:57:07,865 - INFO - Saved database with 20 programs to grayscale/openevolve_runs/run1/checkpoints/checkpoint_25
+2026-06-16 20:57:07,924 - INFO - Saved best program at checkpoint 25 with metrics: combined_score=11784.2539, score=11784.2539, geomean_us=84.8590, pass_rate=1.0000
+2026-06-16 20:57:07,977 - INFO - Saved checkpoint at iteration 25 to grayscale/openevolve_runs/run1/checkpoints/checkpoint_25
+2026-06-16 20:57:07,981 - INFO - ✅ Evolution completed - Maximum iterations reached
+2026-06-16 20:57:10,860 - INFO - Saved database with 20 programs to grayscale/openevolve_runs/run1/checkpoints/checkpoint_25
+2026-06-16 20:57:10,992 - INFO - Saved best program at checkpoint 25 with metrics: combined_score=11784.2539, score=11784.2539, geomean_us=84.8590, pass_rate=1.0000
+2026-06-16 20:57:10,993 - INFO - Saved checkpoint at iteration 25 to grayscale/openevolve_runs/run1/checkpoints/checkpoint_25
+2026-06-16 20:57:11,022 - INFO - Stopped process pool
+2026-06-16 20:57:11,031 - INFO - Using tracked best program: 529b36e6-a53b-4236-b54c-da96be245d6c
+2026-06-16 20:57:11,033 - INFO - Evolution complete. Best program has metrics: combined_score=11784.2539, score=11784.2539, geomean_us=84.8590, pass_rate=1.0000
+2026-06-16 20:57:11,467 - INFO - Saved best program to grayscale/openevolve_runs/run1/best/best_program.py with program info to grayscale/openevolve_runs/run1/best/best_program_info.json
+
+Evolution complete!
+Best program metrics:
+  combined_score: 11784.2539
+  score: 11784.2539
+  geomean_us: 84.8590
+  pass_rate: 1.0000
+
+Latest checkpoint saved at: grayscale/openevolve_runs/run1/checkpoints/checkpoint_25
+To resume, use: --checkpoint grayscale/openevolve_runs/run1/checkpoints/checkpoint_25

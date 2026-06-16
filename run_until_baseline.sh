@@ -6,6 +6,9 @@
 
 set -uo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
 TARGET_LOW=85.0
 TARGET_HIGH=108.0
 MAX_ATTEMPTS=10
@@ -26,7 +29,7 @@ while [ "$attempt" -lt "$MAX_ATTEMPTS" ]; do
 
     BASELINE_JSON=$(mktemp /tmp/baseline_XXXXXX.json)
 
-    if ! python3.13 grayscale/run_eval.py grayscale/starting_point.py \
+    if ! uv run python grayscale/run_eval.py grayscale/starting_point.py \
             -o "$BASELINE_JSON" --mode leaderboard; then
         echo "  Baseline eval failed — retrying in 20s..."
         rm -f "$BASELINE_JSON"
@@ -35,7 +38,7 @@ while [ "$attempt" -lt "$MAX_ATTEMPTS" ]; do
     fi
 
     # Parse geomean and GPU name from the saved markdown
-    PARSE=$(python3.13 -c "
+    PARSE=$(uv run python -c "
 import json, re
 md = json.load(open('$BASELINE_JSON'))
 gm = re.search(r'Geometric mean: ⏱ ([\d.]+)', md)
@@ -52,7 +55,7 @@ print(gpu.group(1) if gpu else 'unknown')
     echo "  Geomean     : ${GEOMEAN} µs   (target: ${TARGET_LOW}–${TARGET_HIGH} µs)"
 
     # Accept only if geomean is within target range
-    IN_RANGE=$(python3.13 -c "
+    IN_RANGE=$(uv run python -c "
 g = float('$GEOMEAN')
 print('yes' if $TARGET_LOW <= g <= $TARGET_HIGH else 'no')
 ")
@@ -69,8 +72,8 @@ print('yes' if $TARGET_LOW <= g <= $TARGET_HIGH else 'no')
         tmux new-session -d -s openevolve
 
         tmux send-keys -t openevolve \
-            "set -a && source .env && set +a && export OPENAI_API_KEY=\$ANTHROPIC_API_KEY && \
-python3.13 -m openevolve.cli \
+            "cd $SCRIPT_DIR && set -a && source .env && set +a && export OPENAI_API_KEY=\$ANTHROPIC_API_KEY && \
+uv run python -m openevolve.cli \
   grayscale/starting_point.py \
   grayscale/openevolve_evaluator.py \
   --config grayscale/openevolve_config.yaml \
@@ -84,7 +87,7 @@ python3.13 -m openevolve.cli \
         echo "  Log          : ${RUN_OUT}.log"
         echo ""
         echo "  Monitor : tmux attach -t openevolve"
-        echo "  Plot    : python3.13 grayscale/plot_run.py $RUN_OUT"
+        echo "  Plot    : uv run python grayscale/plot_run.py $RUN_OUT"
         exit 0
     else
         if [ "$attempt" -lt "$MAX_ATTEMPTS" ]; then
